@@ -118,7 +118,7 @@ export default function EmailLetterWithHeart({ onNext }) {
         </div>
       ) : (
         <div style={{
-          background: "#ff4d6d",
+          background: "darkslategrey",
           padding: "30px",
           borderRadius: "20px",
           maxWidth: "500px",
