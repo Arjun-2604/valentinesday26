@@ -42,9 +42,9 @@ export default function WishPage() {
         )} */}
         <h1 style={title}>💖 Happy Valentine’s Day! 💖</h1>
         <p style={message}>
-          Wishing you all the love, joy, and happiness in the world. You make
-          every day brighter and more special!
+          Through every storm and every smile, I am so grateful I get to call you mine
         </p>
+        <p style={message}>Happy Valentine’s Day, my love💕</p>
       </div>
     </div>
   );
