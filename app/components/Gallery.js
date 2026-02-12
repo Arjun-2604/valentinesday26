@@ -8,21 +8,33 @@ export default function Gallery({ onNext }) {
   const [unlocked, setUnlocked] = useState(false);
   const cards = [
     {
-      title: "The day I knew it was you 💖",
-      image: "/photos/1.jpg",
+      title: "My heart chose you - and it still does 💖",
+      image: "/photos/1.jpeg",
       bg: "linear-gradient(135deg, #ff9a9e, #fad0c4)",
       personality: "bounce" 
     },
     {
-      title: "Every laugh we share ✨",
-      image: "/photos/2.jpg",
+      title: "My forever starts with you 👩‍❤️‍👨",
+      image: "/photos/2.jpeg",
       bg: "linear-gradient(135deg, #fbc2eb, #a6c1ee)",
       personality: "bounce"
     },
     {
-      title: "My favorite adventure 🚲",
-      image: "/photos/3.jpg",
+      title: "Home is wherever I’m with you ✨",
+      image: "/photos/3.jpeg",
       bg: "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
+      personality: "bounce"
+    },
+        {
+      title: "Through every storm, you’ve been my safe place 💕",
+      image: "/photos/8.jpeg",
+      bg: "linear-gradient(135deg, #ff9a9e, #fad0c4)",
+      personality: "bounce"
+    },
+        {
+      title: "My whole world in one picture 📸",
+      image: "/photos/7.jpeg",
+      bg: "linear-gradient(135deg, #fbc2eb, #a6c1ee)",
       personality: "bounce"
     }
   ];
@@ -62,28 +74,50 @@ export default function Gallery({ onNext }) {
 //   setFlipped(updated);
 // };
 
+// const handleFlip = (index) => {
+//   const updated = [...flipped];
+//   updated[index] = !updated[index];
+//   setFlipped(updated);
+
+//   // 🔓 Unlock audio on first interaction
+//   if (!unlocked && audioRef.current) {
+//     audioRef.current.muted = false;
+//     audioRef.current.volume = 0;
+//     audioRef.current.play();
+
+//     let vol = 0;
+//     const fade = setInterval(() => {
+//       vol += 0.05;
+//       audioRef.current.volume = Math.min(vol, 0.3);
+//       if (vol >= 0.3) clearInterval(fade);
+//     }, 100);
+
+//     setUnlocked(true);
+//   }
+// };
+
 const handleFlip = (index) => {
   const updated = [...flipped];
   updated[index] = !updated[index];
   setFlipped(updated);
 
-  // 🔓 Unlock audio on first interaction
+  // 🎵 Start music ONLY on first flip ever
   if (!unlocked && audioRef.current) {
-    audioRef.current.muted = false;
-    audioRef.current.volume = 0;
-    audioRef.current.play();
+    const audio = audioRef.current;
+
+    audio.volume = 0;
+    audio.play();
 
     let vol = 0;
     const fade = setInterval(() => {
       vol += 0.05;
-      audioRef.current.volume = Math.min(vol, 0.3);
+      audio.volume = Math.min(vol, 0.3);
       if (vol >= 0.3) clearInterval(fade);
     }, 100);
 
     setUnlocked(true);
   }
 };
-
 
 
 
@@ -107,8 +141,6 @@ const handleFlip = (index) => {
             ref={audioRef}
             src="/music/love.mp3"
             loop
-            autoPlay
-            muted
             />
 
       {/* Floating hearts */}

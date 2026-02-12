@@ -22,8 +22,8 @@ export default function ValentineCard({ onYes }) {
   return (
     <div style={wrapper}>
       <div style={card}>
-        <h1 style={title}>Hey ❤️</h1>
-        <p style={text}>Will you be my Valentine?</p>
+        <h1 style={title}>Hey Karthick❤️</h1>
+        <p style={text}>Will you be my forever Valentine?</p>
 
         <div style={btnRow}>
           <button style={yesBtn} onClick={onYes}>

@@ -6,7 +6,7 @@ export default function Puzzle({ onSolved }) {
   const [error, setError] = useState(false);
 
   const handleUnlock = () => {
-    if (answer.toLowerCase().trim() === "you") {
+    if (answer.toLowerCase().trim() === "yes") {
       onSolved(); // ✅ move to next step
     } else {
       setError(true);
@@ -18,7 +18,7 @@ export default function Puzzle({ onSolved }) {
     <div style={wrapper}>
       <div style={card}>
         <h1>Unlock my message 💌</h1>
-        <p>Who do I love the most?</p>
+        <p>Would you choose me again?</p>
 
         <div style={row}>
           <input
